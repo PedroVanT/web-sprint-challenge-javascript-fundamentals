@@ -18,7 +18,20 @@ myFunction();
 
 // Explanation: 
 
+// const internal is in the myFunction scope, and so is nestedFunction. nestedFunction has access (because of closure) to the outer scope of myFunction, which contains const internal.
+// inside the scope of function nestedFunctioin, it is console logging internal, which is in the outter scope, of myFunction and because of closure it knows what const internal is.
+
 
 /* Task 2: Counter */
 
-/* Create a function called `summation` that accepts a parameter and uses a counter to return the summation of that number. For example, `summation(4)` should return 10 because 1+2+3+4 is 10. */
+/* Create a function called `summation` that accepts a parameter and uses a counter to return the summation of that number. 
+For example, `summation(4)` should return 10 because 1+2+3+4 is 10. */
+
+function summation(number){
+  let counter = 0;
+  for (let i = 1; i <= number; i++) {
+     counter += i;
+  }
+  return counter;
+}
+console.log(summation(4));
